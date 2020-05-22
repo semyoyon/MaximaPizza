@@ -1,0 +1,2 @@
+rootProject.name='MaximaPizza'
+include ':app'

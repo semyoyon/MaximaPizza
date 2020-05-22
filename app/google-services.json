@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "254553457198",
+    "firebase_url": "https://maximapizza-2ad5e.firebaseio.com",
+    "project_id": "maximapizza-2ad5e",
+    "storage_bucket": "maximapizza-2ad5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254553457198:android:336f033d01829e9af015bf",
+        "android_client_info": {
+          "package_name": "com.example.maximapizza"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254553457198-tdfdo250esnkp8gurjeif39u4u55gssv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maximapizza",
+            "certificate_hash": "80432a07053372543e04dcfcf46756eaeae41550"
+          }
+        },
+        {
+          "client_id": "254553457198-6rh47ngmmui3m1admqt1lehji0b1egqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3_T6WFFnJO_C3d752t2jYoWVbORCxcLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254553457198-6rh47ngmmui3m1admqt1lehji0b1egqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
