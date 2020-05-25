@@ -58,18 +58,14 @@ public class FoodList extends AppCompatActivity {
                 Picasso.with(getBaseContext()).load(food.getImage()).into(foodViewHolder.food_image);
 
                 final Food local = food;
-                foodViewHolder.setItemClickListener(new ItemClickListener(){
+                foodViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
                         Toast.makeText(FoodList.this, ""+local.getName(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
             }
         };
-
-        //Выбираем адаптер
-        Log.d("TAG",""+adapter.getItemCount());
         recyclerView.setAdapter(adapter);
     }
 }
