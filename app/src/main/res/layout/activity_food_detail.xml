@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -45,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/white"
-        android:scr="@drawable/ic_shopping_cart_black_24dp"
+        android:src="@drawable/ic_shopping_cart_black_24dp"
         app:elevation="6dp"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end"
@@ -64,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="5dp"
@@ -77,7 +78,7 @@
 
                     <TextView
                         android:id="@id/food_name"
-                        android:layoutMarginTop="8dp"
+                        android:layout_marginTop="8dp"
                         android:padding="12dp"
                         android:text="Название еды"
                         android:textColor="@color/colorPrimary"
@@ -110,28 +111,28 @@
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
 
-                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButtom
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                         android:id="@+id/numberbutton"
                         android:layout_width="100dp"
-                        android:layout_heighy="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginBottom="18dp"
                         app:textSize="8sp"
-                        app:backGroungColor="@color/colorAccent"
+                        app:backGroundColor="@color/colorAccent"
                         app:initialNumber="1"
                         app:finalNumber="20"/>
 
                 </LinearLayout>
 
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="5dp"
-                app:cardUseCompactPadding="true">
+                app:cardUseCompatPadding="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -144,7 +145,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="14sp"/>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
