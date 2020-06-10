@@ -55,7 +55,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Menu");
+        toolbar.setTitle("Меню");
         setSupportActionBar(toolbar);
 
 
