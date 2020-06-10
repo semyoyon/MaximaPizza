@@ -32,7 +32,7 @@ class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
         this.txt_cart_name = txt_cart_name;
     }
 
-    public CartViewHolder(@NonNull View itemView) {
+    public CartViewHolder(View itemView) {
         super(itemView);
         txt_cart_name=(TextView)itemView.findViewById(R.id.cart_item_name);
         txt_price=(TextView)itemView.findViewById(R.id.cart_item_Price);
@@ -55,17 +55,17 @@ public class CartAdapter extends  RecyclerView.Adapter<CartViewHolder>{
         this.context = context;
     }
 
-    @NonNull
     @Override
-    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CartViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View itemView = inflater.inflate(R.layout.cart_layout,parent,false);
         return new CartViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        TextDrawable drawable = TextDrawable.builder().buildRound(""+listData.get(position).getQuantity(), Color.RED);
+    public void onBindViewHolder(CartViewHolder holder, int position) {
+        TextDrawable drawable = TextDrawable.builder()
+                .buildRound(""+listData.get(position).getQuantity(), Color.RED);
         holder.img_cart_count.setImageDrawable(drawable);
 
         Locale locale = new Locale("ru", "RU");

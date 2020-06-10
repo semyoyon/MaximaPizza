@@ -42,11 +42,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     RecyclerView recyler_menu;
     RecyclerView.LayoutManager layoutManager;
 
+
     FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -63,7 +66,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,15 +74,15 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(cartIntent);
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Set Name for user
+
         //Set Name for user
         View headerView=navigationView.getHeaderView(0);
         txtFullName=(TextView)headerView.findViewById(R.id.txtFullName);

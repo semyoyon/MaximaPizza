@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -41,7 +42,9 @@ public class Cart extends AppCompatActivity {
     FButton btnPlace;
 
     List<Order> cart = new ArrayList<>();
+
     CartAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +77,8 @@ public class Cart extends AppCompatActivity {
 
     private void showAlertDialog() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(Cart.this);
-        alertDialog.setTitle("Еще один шаг");
-        alertDialog.setMessage("Введите адрес доставки: ");
+        alertDialog.setTitle("Последний шаг");
+        alertDialog.setMessage("Введите адрес доставки");
 
         final EditText edtAddress = new EditText(Cart.this);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -85,37 +88,32 @@ public class Cart extends AppCompatActivity {
         edtAddress.setLayoutParams(lp);
         alertDialog.setView(edtAddress);
         alertDialog.setIcon(R.drawable.ic_shopping_cart_black_24dp);
-
-        alertDialog.setPositiveButton("Да", new DialogInterface.OnClickListener(){
+        alertDialog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialogInterface, int i) {
                 Request request = new Request(
                         Common.currentUser.getPhone(),
                         Common.currentUser.getName(),
                         edtAddress.getText().toString(),
                         txtTotalPrice.getText().toString(),
-                        cart);
+                        cart
+                );
 
-                //отправка в бд
                 requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
-                //очистка корзины после отправки заказа
                 new Database(getBaseContext()).cleanCart();
                 Toast.makeText(Cart.this, "Спасибо за заказ!", Toast.LENGTH_SHORT).show();
                 finish();
-
             }
         });
 
-        alertDialog.setNegativeButton("Нет", new DialogInterface.OnClickListener(){
-
+        alertDialog.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int which) {
+            public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-
             }
         });
+        alertDialog.show();
 
-        showAlertDialog();
     }
 
     private void loadListFood(){
